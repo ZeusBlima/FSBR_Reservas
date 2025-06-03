@@ -1,0 +1,21 @@
+CREATE DATABASE ReservaSalas;
+GO
+
+USE ReservaSalas;
+GO
+
+CREATE TABLE Salas (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Nome NVARCHAR(100) NOT NULL,
+    Capacidade INT NOT NULL
+);
+
+CREATE TABLE Reservas (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    SalaId INT NOT NULL,
+    DataInicio DATETIME NOT NULL,
+    DataFim DATETIME NOT NULL,
+    FOREIGN KEY (SalaId) REFERENCES Salas(Id)
+);
+
+--RN92piTCh%$!

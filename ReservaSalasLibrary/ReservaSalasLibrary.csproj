@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>ReservaSalasLibrary</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Amanda Cardoso</Authors>
+    <Company>Felipe Lima</Company>
+    <Description>A library for managing room reservations</Description>
+    <PackageTags>Library, Reservations, Rooms</PackageTags>
+    <RepositoryUrl>https://github.com/your-repository-url</RepositoryUrl>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>
