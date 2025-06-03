@@ -1,0 +1,44 @@
+﻿@using ReservaSalasLibrary.Models
+@model IEnumerable<Reserva>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Reservations</h1>
+    <a href="/Reservation/Create" class="btn btn-primary">Create New Reservation</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Room Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.Id</td>
+                    <td>@reservation.Sala.Nome</td>
+                    <td>@reservation.Periodo.DataInicio</td>
+                    <td>@reservation.Periodo.DataFim</td>
+                    <td>
+                        <form method="post" action="/api/Reservas/PutReserva/@reservation.Id">
+                            <input type="hidden" name="Id" value="@reservation.Id" />
+                            <input type="hidden" name="Sala" value="@reservation.Sala" />
+                            <input type="hidden" name="Periodo" value="@reservation.Periodo" />
+                            <button type="submit" class="btn btn-primary">Edit</button>
+                        </form>
+                        <form method="post" action="/api/Reservas/DeleteReserva/@reservation.Id">
+                            <button type="submit" class="btn btn-danger">Cancel</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

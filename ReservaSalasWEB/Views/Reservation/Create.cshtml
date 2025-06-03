@@ -1,0 +1,31 @@
+@model ReservaSalasLibrary.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create Reservation";
+}
+
+<h1>Create Reservation</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="SalaId" class="control-label">Room ID</label>
+        <input asp-for="SalaId" class="form-control" />
+        <span asp-validation-for="SalaId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Periodo.DataInicio" class="control-label">Start Date</label>
+        <input asp-for="Periodo.DataInicio" class="form-control" type="datetime-local" />
+        <span asp-validation-for="Periodo.DataInicio" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Periodo.DataFim" class="control-label">End Date</label>
+        <input asp-for="Periodo.DataFim" class="form-control" type="datetime-local" />
+        <span asp-validation-for="Periodo.DataFim" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
